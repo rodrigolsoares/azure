@@ -18,7 +18,11 @@
 						"referenceName": "DS_REFINED_MOVIES",
 						"type": "DatasetReference"
 					},
-					"name": "dsmovesrefined"
+					"name": "dsmovesrefined",
+					"rejectedDataLinkedService": {
+						"referenceName": "azureLakeRawMovies",
+						"type": "LinkedServiceReference"
+					}
 				}
 			],
 			"transformations": [
@@ -80,7 +84,8 @@
 				"     preCommands: [],",
 				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> dsmovesrefined"
+				"     skipDuplicateMapOutputs: true,",
+				"     outputAssertFailedRows: true) ~> dsmovesrefined"
 			]
 		}
 	}
