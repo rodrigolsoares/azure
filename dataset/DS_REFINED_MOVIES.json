@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "refined/movie",
+				"folderPath": "refined/movie.parquet",
 				"fileSystem": "disco1"
 			},
 			"compressionCodec": "none"
