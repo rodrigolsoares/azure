@@ -1,0 +1,9 @@
+{
+	"name": "myfactoryRodrigo",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "74735e42-dcd9-43fc-b764-e9a00aede2b9",
+		"tenantId": "9016ac1c-43c1-400d-8c36-2e57967556f2"
+	}
+}
