@@ -14,6 +14,10 @@
 			],
 			"sinks": [
 				{
+					"dataset": {
+						"referenceName": "DS_REFINED_MOVIES",
+						"type": "DatasetReference"
+					},
 					"name": "dsmovesrefined"
 				}
 			],
@@ -71,6 +75,10 @@
 				"          countRecords = count()) ~> aggregateRank",
 				"aggregateRank sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
+				"     format: 'parquet',",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> dsmovesrefined"
 			]
