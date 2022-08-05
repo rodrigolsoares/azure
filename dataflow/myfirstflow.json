@@ -16,6 +16,9 @@
 			"transformations": [
 				{
 					"name": "selectCorrectColumnName"
+				},
+				{
+					"name": "moviesFilterAbove"
 				}
 			],
 			"scriptLines": [
@@ -40,7 +43,8 @@
 				"          {Rotten Tomato} = {Rotton Tomato}",
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> selectCorrectColumnName"
+				"     skipDuplicateMapOutputs: true) ~> selectCorrectColumnName",
+				"selectCorrectColumnName filter(toInteger(year) > 1950) ~> moviesFilterAbove"
 			]
 		}
 	}
