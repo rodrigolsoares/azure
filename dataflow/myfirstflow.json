@@ -19,6 +19,9 @@
 				},
 				{
 					"name": "moviesFilterAbove"
+				},
+				{
+					"name": "derivedGenre"
 				}
 			],
 			"scriptLines": [
@@ -44,7 +47,8 @@
 				"     ),",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> selectCorrectColumnName",
-				"selectCorrectColumnName filter(toInteger(year) > 1950) ~> moviesFilterAbove"
+				"selectCorrectColumnName filter(toInteger(year) > 1950) ~> moviesFilterAbove",
+				"moviesFilterAbove derive(PrimaryGenre = iif(locate('|', genres) > 1, left(genres, locate('|', genres) -1 ), genres)) ~> derivedGenre"
 			]
 		}
 	}
