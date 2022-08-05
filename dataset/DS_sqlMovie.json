@@ -1,0 +1,12 @@
+{
+	"name": "DS_sqlMovie",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "cnnSql",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": []
+	}
+}
