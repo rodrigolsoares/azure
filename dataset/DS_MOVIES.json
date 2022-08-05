@@ -9,7 +9,8 @@
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "HttpServerLocation"
+				"type": "HttpServerLocation",
+				"relativeUrl": "https://github.com/cacaviana/DataFactory/blob/main/moviesDB.csv"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
