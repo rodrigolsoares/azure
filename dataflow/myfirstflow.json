@@ -18,7 +18,7 @@
 						"referenceName": "DS_REFINED_MOVIES",
 						"type": "DatasetReference"
 					},
-					"name": "dsmovesrefined",
+					"name": "refined",
 					"rejectedDataLinkedService": {
 						"referenceName": "azureLakeRawMovies",
 						"type": "LinkedServiceReference"
@@ -77,15 +77,14 @@
 				"          highestRank = first(title),",
 				"          MinorRank = last(title),",
 				"          countRecords = count()) ~> aggregateRank",
-				"aggregateRank sink(allowSchemaDrift: true,",
+				"aggregateRank sink(allowSchemaDrift: false,",
 				"     validateSchema: false,",
 				"     format: 'parquet',",
 				"     umask: 0022,",
 				"     preCommands: [],",
 				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true,",
-				"     outputAssertFailedRows: true) ~> dsmovesrefined"
+				"     skipDuplicateMapOutputs: true) ~> refined"
 			]
 		}
 	}
