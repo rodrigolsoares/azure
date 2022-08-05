@@ -1,0 +1,12 @@
+{
+	"name": "cnnSql",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSqlDatabase",
+		"typeProperties": {
+			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=server-big-data.database.windows.net;initial catalog=DATA-BASE;user id=user-big-data",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDI3MDNCRjE0LTkyM0YtNDdBOC05QTIwLTUzMDVFOTU5RTM2Q181ZmMwYmU4YS03YTI0LTQ5ZGItYWU1OC1lZGMyODJjYTQwYzkiDQp9"
+		}
+	}
+}
