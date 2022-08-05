@@ -11,7 +11,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"fileName": "movie.parquet",
-				"folderPath": "refined/movies",
+				"folderPath": "refined/movie",
 				"fileSystem": "disco1"
 			},
 			"compressionCodec": "none"
