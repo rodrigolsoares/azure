@@ -1,5 +1,5 @@
 {
-	"name": "Parquet1",
+	"name": "DS_REFINED_MOVIES",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "azureLakeRawMovies",
