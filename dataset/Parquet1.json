@@ -1,0 +1,20 @@
+{
+	"name": "Parquet1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "azureLakeRawMovies",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "refined/movies",
+				"fileSystem": "disco1"
+			},
+			"compressionCodec": "none"
+		},
+		"schema": []
+	}
+}

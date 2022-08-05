@@ -12,7 +12,11 @@
 					"name": "movies"
 				}
 			],
-			"sinks": [],
+			"sinks": [
+				{
+					"name": "dsmovesrefined"
+				}
+			],
 			"transformations": [
 				{
 					"name": "selectCorrectColumnName"
@@ -24,7 +28,10 @@
 					"name": "derivedGenre"
 				},
 				{
-					"name": "rank"
+					"name": "createRank"
+				},
+				{
+					"name": "aggregateRank"
 				}
 			],
 			"scriptLines": [
@@ -52,7 +59,20 @@
 				"     skipDuplicateMapOutputs: true) ~> selectCorrectColumnName",
 				"selectCorrectColumnName filter(toInteger(year) > 1950) ~> moviesFilterAbove",
 				"moviesFilterAbove derive({Primary Genre} = iif(locate('|', genres) > 1, left(genres, locate('|', genres) -1 ), genres)) ~> derivedGenre",
-				"derivedGenre window() ~> rank"
+				"derivedGenre window(over({Primary Genre},",
+				"          year),",
+				"     asc({Rotten Tomato}, true),",
+				"     Rank = rank()) ~> createRank",
+				"createRank aggregate(groupBy({Primary Genre},",
+				"          year),",
+				"     average = avg(toInteger({Rotten Tomato})),",
+				"          highestRank = first(title),",
+				"          MinorRank = last(title),",
+				"          countRecords = count()) ~> aggregateRank",
+				"aggregateRank sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> dsmovesrefined"
 			]
 		}
 	}
