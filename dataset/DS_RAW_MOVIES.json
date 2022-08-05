@@ -1,0 +1,42 @@
+{
+	"name": "DS_RAW_MOVIES",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "azureLakeRawMovies",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "moviesDB.csv",
+				"folderPath": "raw",
+				"fileSystem": "disco1"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			},
+			{
+				"type": "String"
+			}
+		]
+	}
+}
